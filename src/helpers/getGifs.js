@@ -1,13 +1,12 @@
 export const getGifs = async (category) => { 
 
-    const url = `https://api.giphy.com/v1/gifs/search?api_key=qLeNBMTkqH7vXWzNT6GnhPDvZ3hW8WSu&limit=5&q=${category}`
+    const url = `https://tenor.googleapis.com/v2/search?q=${category}&key=AIzaSyCpYb4FQpEzAX56EgNZbDrmxfyTGjqeBRM&limit=5`
     const resp = await fetch( url );
-    const { data } = await resp.json();
+    const { results } = await resp.json();
 
-    const gifs = data.map(image =>({
+    const gifs = results.map(image =>({
         id: image.id,
-        title: image.title,
-        url: image.images.downsized_medium.url
+        url: image.media_formats.gif.url
     }))
 
     return gifs;
