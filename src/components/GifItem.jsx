@@ -1,16 +1,20 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
+export const GifItem = ({ urlPreview, url }) => {
 
-export const GifItem = ({ url }) => {
+  const [loading, setLoading] = useState(true);
+  const imageLoaded = () => {
+    setLoading(false);
+  }
 
-    return (
+  return (
     <a className="card" href={url}>
-        <img src={url}/>
+      <img src={urlPreview} onLoad={imageLoaded} />
     </a>
   )
 }
 
 GifItem.propTypes = {
-  title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired
 }
