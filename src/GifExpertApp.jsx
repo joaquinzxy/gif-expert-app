@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { AddCategory, GifGrid } from './components';
+import { Message } from './components/Message';
 
 export const GifExpertApp = () => {
 
@@ -28,6 +29,10 @@ export const GifExpertApp = () => {
             <h1>GIF<span>EXPERT</span>APP</h1>
 
             <AddCategory onNewCategory={onAddCategory} />
+
+            { 
+                categories.length < 1 && (<Message message={'Nada por aquí, realiza una busqueda para ver la magia'}/>)
+            }
 
             {categories.map((category) => (
                 <GifGrid key={category} category={category} onDeleteCategory={onDeleteCategory} />

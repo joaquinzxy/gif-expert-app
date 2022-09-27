@@ -26,6 +26,7 @@ export const AddCategory = ({ onNewCategory }) => {
                 value={ inputValue }
                 onChange={ onInputChange }
             />
+            <input type="submit" value='BUSCAR'/>
         </form>
     )
 }
