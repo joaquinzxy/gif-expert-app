@@ -31,7 +31,8 @@ form{
 input {
   background-color: #2e2e3d;
   border: none;
-  color: rgb(215, 215, 215);
+  border-radius: 0;
+  color: white;
   font-size: 1.2rem;
   outline: none;
   padding: 10px 15px;
@@ -182,8 +183,8 @@ button:hover{
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 2rem;
   padding: 2rem;
+  text-align: center;
 }
 
 .message-container > *{

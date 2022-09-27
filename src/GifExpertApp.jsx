@@ -31,7 +31,7 @@ export const GifExpertApp = () => {
             <AddCategory onNewCategory={onAddCategory} />
 
             { 
-                categories.length < 1 && (<Message message={'Nada por aquí, realiza una busqueda para ver la magia'}/>)
+                categories.length < 1 && (<Message message={'Nada por aquí, realiza una busqueda para ver la magia ✨'}/>)
             }
 
             {categories.map((category) => (
